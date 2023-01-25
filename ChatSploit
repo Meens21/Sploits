@@ -1,0 +1,2 @@
+getgenv().prefix = Enum.KeyCode.Quote
+loadstring(game.HttpGet(game,'https://raw.githubusercontent.com/78n/ChatScripts/main/FakeChat.lua'))()
