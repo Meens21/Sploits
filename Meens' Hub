@@ -1,0 +1,55 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Meens' Hub", "Ocean")
+
+-- Main
+local Universal = Window:NewTab("Universal")
+local CombatSection = Universal:NewSection("Combat")
+local UniversalSection = Universal:NewSection("Universal")
+
+UniversalSection:NewButton("Infinite Yield", "Keybind ;", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+CombatSection:NewButton("Extenders", "Keybind Rshift", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/Meens21/Sploits/main/Extenders'))()
+end)
+CombatSection:NewButton("ESP", "F4 to open/close, F3 to enable/disable", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/Meens21/Sploits/main/ESP'))()
+end)
+
+-- Local Player
+local LocalPlayer = Window:NewTab("Local Player")
+local PlayerSection = LocalPlayer:NewSection("Player")
+
+PlayerSection:NewSlider("Walkspeed", "Change your walkspeed.", 120, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+PlayerSection:NewSlider("Jumppower", "Change your jumppower", 100, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+PlayerSection:NewToggle("Superhuman", "Walk fast, jump high.", function(state)
+    if state then
+       game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 120
+       game.Players.LocalPlayer.Character.Humanoid.JumpPower = 100
+    else
+       game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+       game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+    end
+end)
+PlayerSection:NewButton("Reset WS/JP", "Reset to defaults", function()
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+end)
+
+--Other games
+local OtherGames = Window:NewTab("Games")
+local GamesSection = OtherGames:NewSection("Games")
+
+GamesSection:NewButton("Grass Cutting Incremental", "Simple script for ggs.", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/GreyCaat/Grass-Cutting-Incremental/main/script.txt", true))()
+end)
+GamesSection:NewButton("Arsenal Hub", "Small hub for arsenal", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/fusiongreg/BoltsHubV5/main/Main", true))()
+end)
+GamesSection:NewButton("Miners Haven", "Autofarm in MH.", function()
+    loadstring(game:HttpGet(("https://raw.githubusercontent.com/adrician/Miner-s-Haven-GUI-Made-by-Adrician-Thex/main/newGUI.lua"),true))()
+end)
