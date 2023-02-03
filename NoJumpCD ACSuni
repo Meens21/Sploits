@@ -1,0 +1,2 @@
+local cfg = require(game:GetService('ReplicatedStorage')['ACS_Engine'].GameRules.Config)
+cfg.AntiBunnyHop = false
