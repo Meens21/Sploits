@@ -1,0 +1,10 @@
+local cFrame = CFrame.new(0,0,0)
+
+
+local Size = {
+ X = 1000,
+ Y = 1000,
+ Z = 1000
+}
+
+game:GetService('ReplicatedStorage')['ACS_Engine'].Eventos.Breach:InvokeServer(3,{Fortified={},Destroyable=workspace},CFrame.new(),CFrame.new(),{CFrame=game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame*cFrame,Size=Size})
