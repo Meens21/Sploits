@@ -15,11 +15,15 @@ end)
 UniversalSection:NewButton("Simple Spy", "Zoek maar op yt wat het is kkr domme", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpySource.lua"))()
 end)
+
 CombatSection:NewButton("Extenders", "Keybind Rshift", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/Meens21/Sploits/main/Extenders'))()
 end)
 CombatSection:NewButton("ESP", "F4 to open/close, F3 to enable/disable", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/Meens21/Sploits/main/ESP'))()
+end)
+CombatSection:NewButton("Player Radar", "is gwn radartje", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/Meens21/Sploits/main/PlayerRadarUniversal'))()
 end)
 
 -- ACS system
@@ -36,6 +40,9 @@ ACSUni:NewButton("No Jump Cooldown", "Spreekt voor zich.", function()
 end)
 ACSUni:NewButton("No Fall Damage", "Spreekt voor zich.", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/Meens21/Sploits/main/NoFallDMG%20ACSuni'))()
+end)
+ACSUni:NewButton("Explode Heads", "Spreekt voor zich.", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/Meens21/Sploits/main/Explode%20Heads%20ACS%20Uni'))()
 end)
 
 ACS175:NewButton("Value Changer", "geen idee wat dit doet", function()
@@ -101,6 +108,9 @@ end)
 PlayerSection:NewButton("Reset WS/JP", "Reset to defaults", function()
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+end)
+PlayerSection:NewButton("Boing Boing", "Druk op e om te springe", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Meens21/Sploits/main/Boing%20boing", true))()
 end)
 
 --Other games
