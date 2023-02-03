@@ -1,0 +1,3 @@
+local value = game.Players.LocalPlayer.Character.Saude.Variaveis.MLs
+
+game:GetService('ReplicatedStorage')['ACS_Engine'].Eventos.Recarregar:FireServer(1,{ACS_Modulo={Variaveis={StoredAmmo = value}}})
