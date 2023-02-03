@@ -1,0 +1,19 @@
+--made by basement rat
+--not really an ai made it anyways
+--script that bounces you when you press e in the air,
+-- new patch updates (wow im a dev.. not really. just asked the ai to fix it): IMPORTANT STUFF: its now spammable, 
+--Minor important stuff: you can now use the script and it wont activate when you're chatting
+ --so if i say "hey" it wont detect the "e" in hey
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local torso = character:WaitForChild("HumanoidRootPart")
+
+game:GetService("UserInputService").InputBegan:Connect(function(input, processed)
+    if input.KeyCode == Enum.KeyCode.E and not processed then
+        character = player.Character or player.CharacterAdded:Wait()
+        torso = character:WaitForChild("HumanoidRootPart")
+        local velocity = Vector3.new(0, 100, 0)
+        torso.Velocity = torso.Velocity + velocity
+    end
+end)
