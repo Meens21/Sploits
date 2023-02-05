@@ -1,0 +1,21 @@
+rconsolename("Chat and Join Logs")
+local event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents
+local plrs = game:GetService("Players")
+event.OnMessageDoneFiltering.OnClientEvent:Connect(function(object)
+    local player = tostring(object.FromSpeaker)
+    local msg = tostring(object.Message)
+    local origchan = tostring(object.OriginalChannel)
+    if string.find(origchan, "To ") then
+        local origchan2 = string.gsub(origchan, "To ", "")
+        rconsolewarm(string.format("[WHISPER CHAT] %s to %s: %s", player, origchan2, msg))
+    else
+        rconsolewarn(string.format("[NORMAL CHAT] %s: %s", player, msg or ""))
+    end
+end)
+plrs.PlayerAdded:Connect(function(plr)
+   if plr:IsFriendsWith(plrs.LocalPlayer.UserId) then
+       rconsoleinfo(string.format("[FRIEND] %s joined.", plr.Name))
+   else
+       rconsoleinfo(string.format("%s joined.", plr.Name))
+   end
+end)
